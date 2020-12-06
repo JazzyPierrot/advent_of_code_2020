@@ -15,10 +15,18 @@ def split_batch(text):
     yield ";".join(current_group) #last group
 
 def read_unique_answers(path):
+    """
+    Read batch/group answers at path and returns a list of set of unique answers
+    (one set for each group)
+    """
     with open(path) as f:
         return([set(t.replace(';','')) for t in split_batch(f.read())])
 
 def read_common_answers(path):
+    """
+    Read batch/group answers at path and returns a list of set of common answers
+    (one set for each group)
+    """
     res = []
     with open(path) as f:
         for l in split_batch(f.read()):
