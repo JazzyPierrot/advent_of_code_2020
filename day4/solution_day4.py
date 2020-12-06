@@ -1,21 +1,7 @@
 import pandas as pd
+from common.aoc_functions import split_batch
 from numpy import nan
 import re
-
-def split_batch(text):
-    """
-    Returns a genarator of passports read from a "text" (accepting
-    `splitlines()` method), where each item is one string (with newlines
-    stripped, and space separated values)
-    """
-    current_pass = []
-    for l in text.splitlines():
-        if l == "":
-            yield " ".join(current_pass)
-            current_pass = []
-        else:
-            current_pass.append(l.strip())
-    yield " ".join(current_pass) #last pass
 
 def parse_pass(pass_str):
     """Takes a pass_str in string format and convert it into a dictionnary"""
@@ -32,7 +18,7 @@ def read_pass_batch(path):
     """
     with open(path) as f:
         return pd.DataFrame(
-                [parse_pass(p) for p in split_batch(f.read())]
+                [parse_pass(p) for p in split_batch(f, " ")]
                 )
 
 def are_valid_passes_A(passes):
@@ -70,7 +56,7 @@ def are_valid_passes_B(passes):
     return passes.loc[:, passes.columns.str.startswith("valid")].all(axis = 1)
 
 if __name__ == "__main__":
-    passes = read_pass_batch("./input.txt")
+    passes = read_pass_batch("./day4/input.txt")
     solution_4A = sum(are_valid_passes_A(passes))
     print(
             f'Solution 4A:\n'

@@ -1,7 +1,5 @@
 import unittest
-from solution_day5 import decode_seat_id
-
-
+from day5.solution_day5 import decode_seat_id
 
 class TestDecodeSeatId(unittest.TestCase):
 

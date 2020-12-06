@@ -44,7 +44,7 @@ def print_solution(compliance, problem):
         )
 
 if __name__ == "__main__":
-    input_df = read_input("input.txt")
+    input_df = read_input("./day2/input.txt")
     complianceA = is_policy_compliantA(input_df)
     print_solution(complianceA, "2A")
 

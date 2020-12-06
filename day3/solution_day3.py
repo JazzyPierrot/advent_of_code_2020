@@ -39,7 +39,7 @@ def count_trees_on_way(direction, forest):
     return sum(are_trees(forest, coords))
 
 if __name__ == "__main__":
-    forest = read_forest("./input.txt")
+    forest = read_forest("./day3/input.txt")
     direction = (1, 3)
     ntrees1A = count_trees_on_way(direction, forest)
     print(
