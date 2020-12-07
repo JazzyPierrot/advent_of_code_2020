@@ -1,5 +1,6 @@
 import unittest
-from day7.solution_day7 import parse_rule, read_rules, find_containers
+from day7.solution_day7 import (parse_rule, read_rules, find_containers,
+                                count_bags)
 
 class ParseRule(unittest.TestCase):
 
@@ -31,19 +32,26 @@ class ParseRule(unittest.TestCase):
             {'shiny gold': 1}
         )
 
-    class TestFindContainers(unittest.TestCase):
+class TestFindContainers(unittest.TestCase):
 
-        def test_find_containers(self):
-            rules = read_rules('./day7/test_input.txt')
-            actual = find_containers("shiny gold", rules)
-            expected = {
-                "bright white",
-                "muted yellow",
-                "dark orange",
-                "lightred"
-            }
-            self.assertEqual(actual, expected)
+    def test_find_containers(self):
+        rules = read_rules('./day7/test_input.txt')
+        actual = find_containers("shiny gold", rules)
+        expected = {
+            "bright white",
+            "muted yellow",
+            "dark orange",
+            "light red"
+        }
+        self.assertEqual(actual, expected)
 
+class TestCountBags(unittest.TestCase):
+
+    def test_count_bags(self):
+        rules = read_rules('./day7/test_input.txt')
+        actual = count_bags("shiny gold", rules)
+        expected = 32
+        self.assertEqual(actual, expected)
 
 if __name__ == "__main__":
     unittest.main()
