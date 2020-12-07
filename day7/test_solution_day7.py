@@ -1,6 +1,6 @@
 import unittest
 from day7.solution_day7 import (parse_rule, read_rules, find_containers,
-                                count_bags)
+                                count_contained_bags)
 
 class ParseRule(unittest.TestCase):
 
@@ -49,7 +49,7 @@ class TestCountBags(unittest.TestCase):
 
     def test_count_bags(self):
         rules = read_rules('./day7/test_input.txt')
-        actual = count_bags("shiny gold", rules)
+        actual = count_contained_bags("shiny gold", rules)
         expected = 32
         self.assertEqual(actual, expected)
 
