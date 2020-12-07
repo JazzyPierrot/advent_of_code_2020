@@ -1,11 +1,11 @@
 import unittest
-from solution_day6 import read_unique_answers, read_common_answers
+from day6.solution_day6 import read_unique_answers, read_common_answers
 
 
 class TestUniqueAnswers(unittest.TestCase):
 
     def test_unique_answers(self):
-        actual_answers = read_unique_answers("./test_input.txt")
+        actual_answers = read_unique_answers("./day6/test_input.txt")
         expected = [
             set({"a", "b", "c"}),
             set({"a", "b", "c"}),
@@ -18,7 +18,7 @@ class TestUniqueAnswers(unittest.TestCase):
 class TestCommonAnswers(unittest.TestCase):
 
     def test_common_answers(self):
-        actual_answers = read_common_answers("./test_input.txt")
+        actual_answers = read_common_answers("./day6/test_input.txt")
         expected = [
             set({"a", "b", "c"}),
             set({}),
@@ -27,7 +27,6 @@ class TestCommonAnswers(unittest.TestCase):
             set({"b"})
         ]
         self.assertTrue(actual_answers == expected)
-
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,11 +1,13 @@
 import unittest
-from solution_day3 import *
+import numpy as np
+from solution_day3 import (parse_forest, read_forest, are_trees,
+                           count_trees_on_way)
 
 def get_test_input_small():
     return parse_forest([".#.","..#", "###"])
 
 def get_test_input():
-    return read_forest("./test_input.txt")
+    return read_forest("./day3/test_input.txt")
 
 class TestParseForest(unittest.TestCase):
 

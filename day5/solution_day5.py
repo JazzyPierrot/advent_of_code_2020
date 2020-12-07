@@ -16,7 +16,7 @@ def first_missing_seat_id(seat_ids):
             return s_id
 
 if __name__ == "__main__":
-    seat_ids = read_seat_ids("./input.txt")
+    seat_ids = read_seat_ids("./day5/input.txt")
     solution5A = max(seat_ids)
     print(
             f'Solution 5A:\n'

@@ -29,7 +29,7 @@ def print_solution(solution, problem):
     )
 
 if __name__ == '__main__':
-    l = read_input("./input.txt")
+    l = read_input("./day1/input.txt")
     sol1a = find_combination_given_sum(l, 2, 2020)
     print_solution(sol1a, "1A")
     sol2a = find_combination_given_sum(l, 3, 2020)
