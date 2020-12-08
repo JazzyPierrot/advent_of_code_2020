@@ -2,7 +2,7 @@ import copy
 
 
 def parse_instruction(instruction):
-    """ Parses an instruction to a dictionary """
+    """ Parses an instruction to a tuple """
     splitted_inst = instruction.split(" ")
     return (splitted_inst[0], int(splitted_inst[1]))
 
